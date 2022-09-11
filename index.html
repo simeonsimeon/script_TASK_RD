@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #tt{
+	height:350px;
+	
+}
+#tt table,tr,th,td{
+	border:solid 1px red;
+	border-collapse:collapse;
+}
+#tt table{
+	height:300px;
+	width:600px;
+}
+    </style>
+</head>
+<body>
+    <section id="tt">
+        <div class="container">
+          <table id="ttt">
+          <tr>
+          <th>Name</th>
+          <th>Age</th>
+          <th>Year</th>
+           <th>action</th>
+          
+          </tr>
+        
+          
+          
+          </table>
+          <button id="bttt">edit</button>
+        <button id="delete">delete</button>
+        
+        </div>
+        </section>
+        <div style="height:300px;">
+        <input type="text" placeholder="Name" id="name">
+        <input type="text" placeholder="Age" id="age">
+        <input type="text" placeholder="Year" id="year">
+        <button id="bt">Click</button>
+        
+        
+        
+        </div>
+        <div id="random" style="background-color: red;height: 200px;">
+        
+        
+        
+        </div>
+        <button id="btn">clickclick</button>
+        <div id="rando" style="height: 200px;">
+        
+    <script>
+        /*TABLE WITH EDIT*/
+let bt=document.getElementById("bt");
+
+let obj={};
+let count=1;
+
+   let data= function(){
+   if(name.value!==""){
+    // let para=this.parentNode.parentNode;
+    let tt=document.getElementById("ttt");
+   let tablerow=tt.insertRow(tt.length);
+  //  let a=this.parentNode.parentNode;
+   let cel1=tablerow.insertCell(0);
+   let cel2=tablerow.insertCell(1);
+   let cel3=tablerow.insertCell(2);
+   let cel4=tablerow.insertCell(3);
+    let name=document.getElementById("name");
+ let age=document.getElementById("age");
+ let year=document.getElementById("year");
+ let button=document.createElement("button");
+ 
+ button.innerText="click";
+ let button1=document.createElement("button");
+ button1.innerText="delete";
+ button.setAttribute("data-id",count);
+  cel1.innerHTML=name.value;
+   cel2.innerHTML=age.value;
+   cel3.innerHTML=year.value;
+    cel4.appendChild(button);
+    cel4.appendChild(button1);
+    
+    obj[count]={
+       name:name.value,
+       age:age.value,
+       year:year.value
+    }
+    count++
+console.log(obj);
+    name.value="";
+    age.value="";
+	 year.value="";
+   button.addEventListener("click",function(event){
+    let id=event.target.getAttribute("data-id");
+    name.value=obj[id].name;     
+    age.value=obj[id].age;
+    year.value=obj[id].year;
+
+  })
+  button1.addEventListener("click",function(){
+     
+  })
+   }
+   }
+   bt.addEventListener("click",function(){
+   data();
+   });
+   
+   let edit=document.getElementById("bttt");
+	edit.addEventListener("click",function(){
+	  age.value=geta;
+    year.value=gety;
+	});
+   let a;
+    let easy;
+    let num=0;
+    
+let i=0;
+      
+    do{
+      console.log(easy);
+      a=parseInt(prompt('give'));
+      easy=a+num;
+    
+     
+    }while(a>=0)
+    
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>
